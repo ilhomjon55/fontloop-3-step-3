@@ -1,0 +1,109 @@
+:root{ 
+   --img-height: 371px;
+}
+html {
+   height: 100%;
+   box-sizing: border-box;
+}
+
+*, *::before, *::after {
+   box-sizing: inherit;
+   scroll-behavior: smooth;
+}
+
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+}
+
+body {
+   font-family:"Roboto", "Arial", "sans-serif";
+   font-size: 16px;
+   line-height: 1.5;
+   margin: 0;
+   padding: 0;
+   background-color: #ff9a76;
+}
+.container{
+   max-width: 1120px;
+   display: flex;
+   justify-content: center;
+   margin: 50px auto;
+   padding: 0 20px;
+}
+.movie {
+   position: relative;
+   text-align: center;
+}
+
+.movie + .movie{
+   margin-left: 200px;
+}
+.movie__info{
+   top: 20px;
+   left: 50%;
+   transform:translateX(-50%) scale(0); 
+   z-index: -1;
+   position: absolute;
+   width: 350px;
+   display: flex; 
+   flex-direction: column;
+   align-items: center;
+   padding-top: var(--img-height);
+   background-color: #ffeadb;
+   border-radius: 5px;
+   transition: transform 0.5s ease
+}
+.movie:hover .movie__info{
+   transform:translateX(-50%) scale(1); 
+}
+.movie__info-top{
+   display: flex;
+   flex-direction: column;
+}
+
+.movie__name{
+   margin-top: 0;
+   margin-bottom: 16px;
+   font-size: 24px;
+   font-weight: bold;
+}
+.movie__epigraph{
+   margin-top: 0;
+   margin-bottom: 16px;
+   font-weight: 500;
+   color: rgba(0, 0, 0, 0.5);
+}
+.movie__new-price{
+   margin-bottom: 10px;
+   font-size: 18px;
+   font-weight: bold;
+   color: #679b9b;
+}
+.movie__old-price{
+   margin-bottom: 16px;
+   font-size: 18px;
+   font-weight: bold;
+   text-decoration: line-through;
+   color: rgba(0, 0, 0, 0.5);
+}
+.movie__buy-link{
+   width: 100%;
+   display: block;
+   padding: 15px;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: bold;
+   color: #fff;
+   background-color: #637373;
+   transition: opacity 0.3s ease;
+}
+.movie__buy-link:hover{
+   opacity: 0.7;
+}
